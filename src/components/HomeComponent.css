@@ -34,3 +34,9 @@
 .search-title {
     font-family: fontawesome;
 }
+
+.home-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
