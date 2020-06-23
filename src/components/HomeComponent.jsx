@@ -8,17 +8,19 @@ import { Link } from 'react-router-dom';
 import './HomeComponent.css'
 import Pagination from "./PaginationComponent";
 import { connect } from "react-redux";
-import { changePage } from "../redux/ActionCreators";
+import { changePage, handleSearch } from "../redux/ActionCreators";
 
 const mapStateToProps = state => {
     return {
         currentPage: state.currentPage,
         booksPerPage: state.booksPerPage,
+        searchTitle: state.searchTitle
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
     paginate: (number) => { dispatch(changePage(number)) },
+    handleSearch: (title) => { dispatch(handleSearch(title)) }
 })
 
 class Home extends React.Component {
@@ -49,20 +51,30 @@ class Home extends React.Component {
                     <Spinner color="dark" />
                     :
                     <div>
-                        <h3>Total Books: {this.props.books.length}</h3>
-                        <h3>Page Results: {currentBooks.length}</h3>
+                        <div className="home-header">
+                            <span className="header-item">Total Books: {this.props.books.length}</span>
+                            <span className="header-item">Page Results: {currentBooks.length}</span>
+                            <input
+                                type="text"
+                                className="search-title"
+                                placeholder="&#xf002; Search book titles"
+                                value={this.props.searchTitle}
+                                onChange={(e) => this.props.handleSearch(e.target.value)}
+                            />
+                        </div>
+
                         <div className="cards-list-container">
                             {myLibrary}
                         </div>
-                         <div className="pagination-container">
-                         <Pagination
-                            className="pagination"
-                            currentPage = {this.props.currentPage}
-                            booksPerPage={this.props.booksPerPage}
-                            totalBooks={this.props.books.length}
-                            paginate={this.props.paginate}
-                        />
-                        </div>   
+                        <div className="pagination-container">
+                            <Pagination
+                                className="pagination"
+                                currentPage={this.props.currentPage}
+                                booksPerPage={this.props.booksPerPage}
+                                totalBooks={this.props.books.length}
+                                paginate={this.props.paginate}
+                            />
+                        </div>
                     </div>
                 }
             </div>

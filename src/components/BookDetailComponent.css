@@ -34,3 +34,13 @@
 hr {
     background-color: rgba(255,255,255,0.8) ;
 }
+
+.home-header {
+    background-color: #333;
+    color: rgba(255,255,255,0.8);
+    height: 6vh;
+}
+
+.header-item {
+    padding: 20px
+}
