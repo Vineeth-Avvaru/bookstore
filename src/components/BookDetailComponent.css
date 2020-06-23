@@ -1,5 +1,5 @@
 .book-detail-container {
-    height: calc(100vh - 40px);
+    height: 100vh;
 }
 
 .back-link {
@@ -12,7 +12,9 @@
     padding: 20px;
     height: calc(100% - 15vh);
     border: 1px solid grey;
-    box-shadow: 5px 10px grey
+    box-shadow: 5px 10px grey;
+    background-color: #333;
+    color: rgba(255,255,255,0.8);
 }
 
 .book-info {
@@ -22,8 +24,4 @@
 
 .book-data {
     margin-left: 10px;
-}
-
-.long-description {
-    overflow-y: auto;
 }

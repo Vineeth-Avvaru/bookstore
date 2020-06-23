@@ -20,3 +20,13 @@
     align-self: center;
     margin-bottom: 5px;
 }
+
+.pagination-container {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center
+}
