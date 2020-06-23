@@ -27,7 +27,8 @@ class Home extends React.Component {
 
     render() {
 
-        const filteredBooks = this.props.books.filter((book) => book.title.toUpperCase().indexOf(this.props.searchTitle.toUpperCase()) !== -1);
+        const searchBooks = this.props.searchTitle.toUpperCase();
+        const filteredBooks = this.props.books.filter((book) => book.title.toUpperCase().indexOf(searchBooks) !== -1 || book.authors.join().toUpperCase().indexOf(searchBooks) !== -1);
         // Get current books
         const indexOfLastBook = this.props.currentPage * this.props.booksPerPage;
         const indexOfFirstBook = indexOfLastBook - this.props.booksPerPage;
