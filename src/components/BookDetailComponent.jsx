@@ -12,7 +12,7 @@ class BookDetail extends React.Component {
             <div className="book-detail-container">
                 <Link to="/home" className="back-link"> <FontAwesomeIcon icon={faArrowLeft} /><b> back</b></Link>
                 <div className="book-content">
-                    <div class="book-info">
+                    <div className="book-info">
                         <div>
                             <img src={this.props.book.thumbnailUrl} alt={this.props.book.title} />
                         </div>
