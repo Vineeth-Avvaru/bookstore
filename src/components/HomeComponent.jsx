@@ -59,7 +59,7 @@ class Home extends React.Component {
                             <input
                                 type="text"
                                 className="search-title"
-                                placeholder="&#xf002; Search book titles"
+                                placeholder="&#xf002; Search titles or authors"
                                 value={this.props.searchTitle}
                                 onChange={(e) => this.props.handleSearch(e.target.value)}
                             />
