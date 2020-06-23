@@ -2,7 +2,7 @@ import React from 'react';
 import imgNotAvailable from '../assets/images/image_not_available.png';
 import {
     Card, CardImg, CardBody,
-    CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle, Button, Spinner
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './HomeComponent.css'
@@ -24,10 +24,16 @@ class Home extends React.Component {
         })
         return (
             <div>
-                <h2>Results: {this.props.books.length}</h2>
-                <div className="cards-list-container">
-                    {myLibrary}
-                </div>
+                {this.props.isLoading ?
+                     <Spinner color="dark" />
+                    :
+                    <div>
+                        <h2>Results: {this.props.books.length}</h2>
+                        <div className="cards-list-container">
+                            {myLibrary}
+                        </div>
+                    </div>
+                }
             </div>
         )
     }

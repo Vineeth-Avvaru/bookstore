@@ -9,6 +9,7 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             books: []
         }
     }
@@ -16,7 +17,7 @@ class Main extends React.Component {
     componentDidMount() {
         fetch(fetchBooksURL)
             .then(response => response.json())
-            .then(data => this.setState({ books: data }))
+            .then(data => this.setState({ books: data, isLoading: false }))
     }
 
     render() {
@@ -30,7 +31,7 @@ class Main extends React.Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/home" component={() => <Home books={this.state.books} />} />
+                    <Route exact path="/home" component={() => <Home books={this.state.books} isLoading={this.state.isLoading} />} />
                     <Route path="/home/:bookIndex" component={BookWithIndex} />
                     <Redirect to="/home" />
                 </Switch>

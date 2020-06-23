@@ -1,0 +1,29 @@
+.book-detail-container {
+    height: calc(100vh - 40px);
+}
+
+.back-link {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.book-content {
+    margin: 5vh 10vw 5vh 10vw;
+    padding: 20px;
+    height: calc(100% - 15vh);
+    border: 1px solid grey;
+    box-shadow: 5px 10px grey
+}
+
+.book-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.book-data {
+    margin-left: 10px;
+}
+
+.long-description {
+    overflow-y: auto;
+}
