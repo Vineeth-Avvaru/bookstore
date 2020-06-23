@@ -57,6 +57,7 @@ class Home extends React.Component {
                          <div className="pagination-container">
                          <Pagination
                             className="pagination"
+                            currentPage = {this.props.currentPage}
                             booksPerPage={this.props.booksPerPage}
                             totalBooks={this.props.books.length}
                             paginate={this.props.paginate}
