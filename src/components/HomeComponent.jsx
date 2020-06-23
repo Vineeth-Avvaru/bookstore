@@ -27,10 +27,11 @@ class Home extends React.Component {
 
     render() {
 
+        const filteredBooks = this.props.books.filter((book) => book.title.indexOf(this.props.searchTitle) !== -1);
         // Get current books
         const indexOfLastBook = this.props.currentPage * this.props.booksPerPage;
         const indexOfFirstBook = indexOfLastBook - this.props.booksPerPage;
-        const currentBooks = this.props.books.slice(indexOfFirstBook, indexOfLastBook);
+        const currentBooks = filteredBooks.slice(indexOfFirstBook, indexOfLastBook);
 
         const myLibrary = currentBooks.map((book, index) => {
             return (
@@ -71,7 +72,7 @@ class Home extends React.Component {
                                 className="pagination"
                                 currentPage={this.props.currentPage}
                                 booksPerPage={this.props.booksPerPage}
-                                totalBooks={this.props.books.length}
+                                totalBooks={filteredBooks.length}
                                 paginate={this.props.paginate}
                             />
                         </div>
