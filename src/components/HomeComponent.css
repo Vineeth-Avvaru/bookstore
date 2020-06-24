@@ -40,3 +40,9 @@
     flex-direction: row;
     align-items: center;
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .search-title {
+        height: 28px
+    }
+ }
