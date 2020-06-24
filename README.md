@@ -2,6 +2,12 @@
 You need to have Node installed in you local system. <br/>
 To install [Node](https://nodejs.org/en/download/).
 
+## About
+- Uses [https://raw.githubusercontent.com/bvaughn/infinite-list-reflow-examples/master/books.json](https://raw.githubusercontent.com/bvaughn/infinite-list-reflow-examples/master/books.json) to fetch the books data.
+- Can view the books.
+- Can select the book for more details
+- Can search the book by title or author. 
+
 ## How to run in Local system
 
 In the project directory run:
