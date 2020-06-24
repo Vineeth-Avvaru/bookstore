@@ -26,7 +26,9 @@ class Main extends React.Component {
         const BookWithIndex = ({ match }) => {
             let booksList = this.state.books;
             return (
-                <BookDetail book={booksList.filter((book, index) => book.isbn === match.params.bookIndex)[0]} />
+                <div>
+                    { booksList.length ? <BookDetail book={booksList.filter((book, index) => book.isbn === match.params.bookIndex)[0]} /> : ""}
+                </div>
             )
         }
         return (

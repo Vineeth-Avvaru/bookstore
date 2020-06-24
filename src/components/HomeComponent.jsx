@@ -1,5 +1,4 @@
 import React from 'react';
-// import imgNotAvailable from '../assets/images/image_not_available.png';
 import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button, Spinner

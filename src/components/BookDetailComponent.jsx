@@ -8,6 +8,8 @@ class BookDetail extends React.Component {
     render() {
         const longDescription = "longDescription";
         const shortDescription = "shortDescription";
+        const categories = "categories";
+        const pageCount = "pageCount";
         return (
             <div className="book-detail-container">
                 <Link to="/home" className="back-link"> <FontAwesomeIcon icon={faArrowLeft} /><b> back</b></Link>
@@ -20,7 +22,8 @@ class BookDetail extends React.Component {
                             <div><b>Title: </b>{this.props.book.title}</div>
                             <div><b>Authors: </b>{this.props.book.authors.join(", ")}</div>
                             <div><b>Status: </b>{this.props.book.status}</div>
-                            <div><b>Categories: </b>{this.props.book.categories.join(", ")}</div>
+                            <div>{this.props.book.hasOwnProperty(categories) ? <div> <b>Categories: </b>{this.props.book.categories.join(", ")}</div>: "" }</div>
+                            <div>{this.props.book.hasOwnProperty(pageCount) ? <div> <b>PageCount: </b>{this.props.book.pageCount}</div>: "" }</div>
                         </div>
                     </div>
                     <div>{this.props.book.hasOwnProperty(shortDescription) ? <div> <b>Short Description: </b> {this.props.book.shortDescription} </div> : ""}</div>
