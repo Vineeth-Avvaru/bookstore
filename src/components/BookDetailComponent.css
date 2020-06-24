@@ -44,3 +44,8 @@ hr {
 .header-item {
     padding: 20px
 }
+
+.long-description {
+    max-height: 50%;
+    overflow-y: auto;
+}
